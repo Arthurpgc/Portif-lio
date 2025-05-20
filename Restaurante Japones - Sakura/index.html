@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Sushi - Gastronomia Japonesa Autêntica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-3">S</div>
+                    <span class="text-2xl font-bold text-gray-800">Sakura Sushi</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Início</a>
+                    <a href="#about" class="nav-link">Sobre</a>
+                    <a href="#menu" class="nav-link">Menu</a>
+                    <a href="#chefs" class="nav-link">Chefs</a>
+                    <a href="#contact" class="nav-link">Contato</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#reservation" class="hidden md:block bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full transition duration-300">Reservas</a>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="nav-link">Início</a>
+                <a href="#about" class="nav-link">Sobre</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#chefs" class="nav-link">Chefs</a>
+                <a href="#contact" class="nav-link">Contato</a>
+                <a href="#reservation" class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-center transition duration-300">Reservas</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero flex items-center justify-center text-center text-white pt-20">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 font-serif">Autêntica Experiência Japonesa</h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto">Descubra a verdadeira arte do sushi preparado por mestres japoneses com ingredientes frescos importados diretamente do Japão.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#menu" class="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-full text-lg font-medium transition duration-300">Ver Menu</a>
+                <a href="#reservation" class="bg-white hover:bg-gray-100 text-red-500 px-8 py-3 rounded-full text-lg font-medium transition duration-300">Reservar Mesa</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 relative">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1563612116625-3012372fccce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Sushi Chef" class="rounded-lg shadow-xl w-full">
+                        <div class="absolute -bottom-6 -right-6 bg-red-500 text-white p-6 rounded-lg shadow-lg">
+                            <p class="text-3xl font-bold">15+</p>
+                            <p class="text-sm">Anos de Experiência</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 font-serif">Nossa História</h2>
+                    <p class="text-gray-600 mb-6">Fundado em 2008 pelo Chef Hiroshi Tanaka, o Sakura Sushi nasceu da paixão por trazer a autêntica culinária japonesa para o Brasil. Com técnicas tradicionais passadas por gerações e ingredientes selecionados, criamos uma experiência gastronômica única.</p>
+                    <p class="text-gray-600 mb-8">Nosso restaurante foi premiado por 5 anos consecutivos como o melhor restaurante japonês da cidade, graças ao nosso compromisso com a qualidade e autenticidade.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="bg-red-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-fish text-red-500"></i>
+                            </div>
+                            <p>Peixes Frescos</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-red-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-award text-red-500"></i>
+                            </div>
+                            <p>Chefs Premiados</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-red-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-leaf text-red-500"></i>
+                            </div>
+                            <p>Ingredientes Naturais</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-red-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-utensils text-red-500"></i>
+                            </div>
+                            <p>Técnicas Tradicionais</p>
+                        </div>
+                    </div>
+                    <a href="#chefs" class="inline-flex items-center text-red-500 font-medium">
+                        Conheça nossos chefs <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Specialties Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Nossas Especialidades</h2>
+                <div class="w-20 h-1 bg-red-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-xl transition duration-300">
+                    <div class="bg-red-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-sushi-roll text-red-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sushi Artesanal</h3>
+                    <p class="text-gray-600">Preparado com arroz temperado à mão e peixes selecionados, cada peça é uma obra de arte.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-xl transition duration-300">
+                    <div class="bg-red-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-fire text-red-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Teppanyaki</h3>
+                    <p class="text-gray-600">Carne, frutos do mar e vegetais grelhados na chapa de ferro diante dos clientes.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-xl transition duration-300">
+                    <div class="bg-red-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-mortar-pestle text-red-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Missoshiru</h3>
+                    <p class="text-gray-600">Sopa tradicional japonesa preparada com pasta de soja fermentada e ingredientes frescos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Nosso Menu</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore nossa seleção de pratos tradicionais japoneses preparados com os melhores ingredientes.</p>
+                <div class="w-20 h-1 bg-red-500 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="flex justify-center mb-12">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button type="button" class="menu-category px-6 py-2 text-sm font-medium rounded-l-lg border border-gray-300 bg-white text-gray-900 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-red-500 focus:text-red-700" data-category="sushi">
+                        Sushi
+                    </button>
+                    <button type="button" class="menu-category px-6 py-2 text-sm font-medium border-t border-b border-gray-300 bg-white text-gray-900 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-red-500 focus:text-red-700" data-category="sashimi">
+                        Sashimi
+                    </button>
+                    <button type="button" class="menu-category px-6 py-2 text-sm font-medium border border-gray-300 bg-white text-gray-900 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-red-500 focus:text-red-700" data-category="hot">
+                        Pratos Quentes
+                    </button>
+                    <button type="button" class="menu-category px-6 py-2 text-sm font-medium rounded-r-md border border-gray-300 bg-white text-gray-900 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-red-500 focus:text-red-700" data-category="drinks">
+                        Bebidas
+                    </button>
+                </div>
+            </div>
+            
+            <div id="menu-content">
+                <!-- Sushi Menu (default) -->
+                <div id="sushi-menu" class="menu-section grid md:grid-cols-2 gap-8">
+                    <div class="menu-item bg-white rounded-lg shadow-md overflow-hidden relative">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1579584425555-c3ce17fd1871?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80')"></div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">Sushi Variado</h3>
+                                <span class="text-red-500 font-bold">R$ 89,90</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Seleção de 12 peças de sushi variado com salmão, atum, peixe branco e camarão.</p>
+                            <div class="menu-overlay absolute inset-0 bg-black/70 flex items-center justify-center p-6">
+                                <p class="text-white text-center">Peças preparadas na hora com peixes frescos importados</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item bg-white rounded-lg shadow-md overflow-hidden relative">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1617196035151-1ce5b350a2c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80')"></div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">Salmão Nigiri</h3>
+                                <span class="text-red-500 font-bold">R$ 42,90</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">4 peças de nigiri com fatias generosas de salmão fresco sobre arroz temperado.</p>
+                            <div class="menu-overlay absolute inset-0 bg-black/70 flex items-center justify-center p-6">
+                                <p class="text-white text-center">Salmão selvagem do Alasca, cortado na hora</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item bg-white rounded-lg shadow-md overflow-hidden relative">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1617196035151-1ce5b350a2c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80')"></div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">Uramaki Filadélfia</h3>
+                                <span class="text-red-500 font-bold">R$ 56,90</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">8 peças de uramaki recheado com cream cheese e salmão, envolto em arroz.</p>
+                            <div class="menu-overlay absolute inset-0 bg-black/70 flex items-center justify-center p-6">
+                                <p class="text-white text-center">Cream cheese artesanal e salmão premium</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item bg-white rounded-lg shadow-md overflow-hidden relative">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1617196035151-1ce5b350a2c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80')"></div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">Temaki Especial</h3>
+                                <span class="text-red-500 font-bold">R$ 34,90</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">2 cones de alga nori recheados com arroz, salmão, pepino e cream cheese.</p>
+                            <div class="menu-overlay absolute inset-0 bg-black/70 flex items-center justify-center p-6">
+                                <p class="text-white text-center">Montado na hora para garantir a crocância da alga</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sashimi Menu (hidden by default) -->
+                <div id="sashimi-menu" class="menu-section hidden grid md:grid-cols-2 gap-8">
+                    <!-- Sashimi items would go here -->
+                </div>
+                
+                <!-- Hot Dishes Menu (hidden by default) -->
+                <div id="hot-menu" class="menu-section hidden grid md:grid-cols-2 gap-8">
+                    <!-- Hot dishes would go here -->
+                </div>
+                
+                <!-- Drinks Menu (hidden by default) -->
+                <div id="drinks-menu" class="menu-section hidden grid md:grid-cols-2 gap-8">
+                    <!-- Drinks would go here -->
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-full text-lg font-medium transition duration-300">Ver Menu Completo</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Chefs Section -->
+    <section id="chefs" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Nossos Mestres Sushimen</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Nossos chefs possuem anos de experiência e treinamento no Japão para trazer a você a verdadeira arte da culinária japonesa.</p>
+                <div class="w-20 h-1 bg-red-500 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Hiroshi Tanaka</h3>
+                        <p class="text-red-500 mb-3">Chef Executivo</p>
+                        <p class="text-gray-600 mb-4">Com 25 anos de experiência, o Chef Tanaka trouxe suas técnicas de Osaka para criar pratos autênticos que encantam nossos clientes.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-red-500"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-red-500"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Yuki Nakamura</h3>
+                        <p class="text-red-500 mb-3">Sushiman Chefe</p>
+                        <p class="text-gray-600 mb-4">Especialista em sushi com 15 anos de experiência, Yuki domina a arte do corte preciso e preparo tradicional do arroz.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-red-500"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-red-500"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Kenji Sato</h3>
+                        <p class="text-red-500 mb-3">Chef de Teppanyaki</p>
+                        <p class="text-gray-600 mb-4">Mestre em teppanyaki com shows culinários que encantam tanto pelo sabor quanto pela performance.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-red-500"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-red-500"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">O Que Dizem Nossos Clientes</h2>
+                <div class="w-20 h-1 bg-red-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-gray-50 p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Customer" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ana Carolina</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"O melhor sushi que já comi na vida! O salmão derrete na boca e a apresentação dos pratos é impecável. Volto toda semana!"</p>
+                </div>
+                
+                <div class="testimonial-card bg-gray-50 p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ricardo Almeida</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Experiência incrível! O teppanyaki com o Chef Kenji é espetacular. Levei minha família e todos adoraram. Comida deliciosa e atendimento perfeito."</p>
+                </div>
+                
+                <div class="testimonial-card bg-gray-50 p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Customer" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Fernanda Gomes</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Ambiente sofisticado e aconchegante. O sushi variado é minha paixão, sempre fresco e saboroso. Recomendo o Sakura para quem busca autenticidade."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-cover bg-center h-80 md:h-auto" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4bab7a1e5d52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80')"></div>
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h2 class="text-3xl font-bold mb-6 font-serif">Reserve Sua Mesa</h2>
+                        <form>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="name">Nome</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="email">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label class="block text-gray-700 mb-2" for="date">Data</label>
+                                    <input type="date" id="date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2" for="time">Hora</label>
+                                    <input type="time" id="time" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="guests">Número de Pessoas</label>
+                                <select id="guests" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                                    <option>1 pessoa</option>
+                                    <option>2 pessoas</option>
+                                    <option>3 pessoas</option>
+                                    <option>4 pessoas</option>
+                                    <option>5+ pessoas</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg font-medium transition duration-300">Reservar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Entre em Contato</h2>
+                <div class="w-20 h-1 bg-red-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Informações de Contato</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-red-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Endereço</h4>
+                                <p class="text-gray-600">Rua Japão, 123 - Jardins<br>São Paulo - SP</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-red-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Telefone</h4>
+                                <p class="text-gray-600">(11) 1234-5678</p>
+                                <p class="text-gray-600">(11) 98765-4321 (WhatsApp)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-red-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email</h4>
+                                <p class="text-gray-600">contato@sakurasushi.com.br</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-red-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Horário de Funcionamento</h4>
+                                <p class="text-gray-600">Terça a Domingo: 11h30 às 15h e 18h às 23h<br>Segunda: Fechado</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold mb-4">Siga-nos</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-100 hover:bg-red-500 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-red-500 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-red-500 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Envie uma Mensagem</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="contact-name">Nome</label>
+                            <input type="text" id="contact-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="contact-email">Email</label>
+                            <input type="email" id="contact-email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="contact-subject">Assunto</label>
+                            <input type="text" id="contact-subject" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2" for="contact-message">Mensagem</label>
+                            <textarea id="contact-message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0754267452926!2d-46.6534269246876!3d-23.56573436174836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1685555566323!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-2">S</div>
+                        <span class="text-xl font-bold">Sakura Sushi</span>
+                    </div>
+                    <p class="text-gray-400">Autêntica culinária japonesa em São Paulo, com ingredientes frescos e técnicas tradicionais.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Início</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-white transition duration-300">Menu</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">Sobre Nós</a></li>
+                        <li><a href="#chefs" class="text-gray-400 hover:text-white transition duration-300">Nossos Chefs</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Horário</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between"><span>Terça - Sexta</span> <span>11:30 - 23:00</span></li>
+                        <li class="flex justify-between"><span>Sábado</span> <span>11:30 - 00:00</span></li>
+                        <li class="flex justify-between"><span>Domingo</span> <span>11:30 - 22:00</span></li>
+                        <li class="flex justify-between"><span>Segunda</span> <span>Fechado</span></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Inscreva-se para receber nossas promoções e novidades.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Sakura Sushi. Todos os direitos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="#" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition duration-300">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 left-6 bg-red-500 hover:bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Menu category switching
+        const menuCategories = document.querySelectorAll('.menu-category');
+        menuCategories.forEach(category => {
+            category.addEventListener('click', function() {
+                // Remove active class from all buttons
+                menuCategories.forEach(btn => {
+                    btn.classList.remove('bg-red-500', 'text-white');
+                    btn.classList.add('bg-white', 'text-gray-900');
+                });
+                
+                // Add active class to clicked button
+                this.classList.remove('bg-white', 'text-gray-900');
+                this.classList.add('bg-red-500', 'text-white');
+                
+                // Hide all menu sections
+                document.querySelectorAll('.menu-section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+                
+                // Show selected menu section
+                const categoryId = this.getAttribute('data-category');
+                document.getElementById(`${categoryId}-menu`).classList.remove('hidden');
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    // Calculate position with offset for fixed header
+                    const headerHeight = document.querySelector('nav').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
