@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Completo - Sakura Sushi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-3">S</div>
+                        <span class="text-2xl font-bold text-gray-800">Sakura Sushi</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="index.html#about" class="nav-link">Sobre</a>
+                    <a href="menu.html" class="nav-link text-red-500 font-medium">Menu</a>
+                    <a href="index.html#chefs" class="nav-link">Chefs</a>
+                    <a href="index.html#contact" class="nav-link">Contato</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="index.html#reservation" class="hidden md:block bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full transition duration-300">Reservas</a>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="index.html#about" class="nav-link">Sobre</a>
+                <a href="menu.html" class="nav-link text-red-500 font-medium">Menu</a>
+                <a href="index.html#chefs" class="nav-link">Chefs</a>
+                <a href="index.html#contact" class="nav-link">Contato</a>
+                <a href="index.html#reservation" class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-center transition duration-300">Reservas</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="menu-hero flex items-center justify-center text-center text-white pt-20">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 font-serif">Nosso Menu Completo</h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto">Explore nossa seleção de pratos tradicionais japoneses preparados com os melhores ingredientes.</p>
+        </div>
+    </section>
+    
+    <!-- Menu Categories -->
+    <section class="py-12 bg-white sticky top-20 z-10 shadow-sm">
+        <div class="container mx-auto px-6">
+            <div class="flex overflow-x-auto pb-2 hide-scrollbar">
+                <div class="flex space-x-2">
+                    <button class="category-tab active px-6 py-2 rounded-full whitespace-nowrap" data-category="sushi">Sushi & Sashimi</button>
+                    <button class="category-tab px-6 py-2 rounded-full whitespace-nowrap bg-gray-100" data-category="hot">Pratos Quentes</button>
+                    <button class="category-tab px-6 py-2 rounded-full whitespace-nowrap bg-gray-100" data-category="temaki">Temaki</button>
+                    <button class="category-tab px-6 py-2 rounded-full whitespace-nowrap bg-gray-100" data-category="uramaki">Uramaki</button>
+                    <button class="category-tab px-6 py-2 rounded-full whitespace-nowrap bg-gray-100" data-category="hosomaki">Hosomaki</button>
+                    <button class="category-tab px-6 py-2 rounded-full whitespace-nowrap bg-gray-100" data-category="entradas">Entradas</button>
+                    <button class="category-tab px-6 py-2 rounded-full whitespace-nowrap bg-gray-100" data-category="sobremesas">Sobremesas</button>
+                    <button class="category-tab px-6 py-2 rounded-full whitespace-nowrap bg-gray-100" data-category="bebidas">Bebidas</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Menu Content -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <!-- Sushi & Sashimi Section -->
+            <div id="sushi-section" class="menu-category-section">
+                <h2 class="text-3xl font-bold mb-8 font-serif flex items-center">
+                    <i class="fas fa-fish text-red-500 mr-3"></i> Sushi & Sashimi
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🔥</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Sashimi Variado</h3>
+                            <span class="text-red-500 font-bold">R$ 98,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">15 fatias de sashimi variado (salmão, atum, peixe branco e polvo).</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🌟</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Sushi Premium</h3>
+                            <span class="text-red-500 font-bold">R$ 120,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">12 peças de sushi com salmão, atum, camarão e peixe branco premium.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Salmão Nigiri</h3>
+                            <span class="text-red-500 font-bold">R$ 42,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">4 peças de nigiri com fatias generosas de salmão fresco sobre arroz temperado.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🔥</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Tataki de Atum</h3>
+                            <span class="text-red-500 font-bold">R$ 68,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Atum selado, cortado em fatias grossas, servido com molho ponzu e gergelim.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Sashimi de Salmão</h3>
+                            <span class="text-red-500 font-bold">R$ 56,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">10 fatias generosas de salmão fresco, cortado na hora.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1-2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🌟</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Combinado Especial</h3>
+                            <span class="text-red-500 font-bold">R$ 145,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">8 peças de sushi, 10 fatias de sashimi, 4 uramaki e 1 temaki.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 2-3 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pratos Quentes Section (hidden by default) -->
+            <div id="hot-section" class="menu-category-section hidden">
+                <h2 class="text-3xl font-bold mb-8 font-serif flex items-center">
+                    <i class="fas fa-fire text-red-500 mr-3"></i> Pratos Quentes
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🔥</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Teppanyaki Misto</h3>
+                            <span class="text-red-500 font-bold">R$ 89,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Carne, frango e camarão grelhados na chapa com legumes e molho especial.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Yakissoba</h3>
+                            <span class="text-red-500 font-bold">R$ 52,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Macarrão stir-fry com legumes, carne e molho especial.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1-2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🌟</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Tempurá Misto</h3>
+                            <span class="text-red-500 font-bold">R$ 45,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Camarão, legumes e vegetais empanados na massa tempurá crocante.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Missoshiru</h3>
+                            <span class="text-red-500 font-bold">R$ 18,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Sopa tradicional japonesa com pasta de soja, tofu e cebolinha.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Kare Raisu</h3>
+                            <span class="text-red-500 font-bold">R$ 48,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Arroz com curry japonês e carne bovina macia.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🔥</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Gyoza</h3>
+                            <span class="text-red-500 font-bold">R$ 32,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">6 unidades de pastéis japoneses recheados com carne suína e legumes.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1-2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Temaki Section (hidden by default) -->
+            <div id="temaki-section" class="menu-category-section hidden">
+                <h2 class="text-3xl font-bold mb-8 font-serif flex items-center">
+                    <i class="fas fa-ice-cream text-red-500 mr-3"></i> Temaki
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🔥</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Temaki Especial</h3>
+                            <span class="text-red-500 font-bold">R$ 34,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cone de alga nori recheado com arroz, salmão, pepino e cream cheese.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">1 unidade</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Temaki de Atum</h3>
+                            <span class="text-red-500 font-bold">R$ 32,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cone de alga nori com atum fresco, arroz e cebolinha.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">1 unidade</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🌟</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Temaki Vegetariano</h3>
+                            <span class="text-red-500 font-bold">R$ 28,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cone de alga nori com arroz, pepino, cenoura e abacate.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">1 unidade</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Temaki de Camarão</h3>
+                            <span class="text-red-500 font-bold">R$ 36,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cone de alga nori com camarão empanado, arroz e molho especial.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">1 unidade</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Temaki de Kani</h3>
+                            <span class="text-red-500 font-bold">R$ 32,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cone de alga nori com kani (caranguejo), arroz e pepino.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">1 unidade</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🔥</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Temaki Hot</h3>
+                            <span class="text-red-500 font-bold">R$ 38,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cone de alga nori com salmão, cream cheese e molho picante.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">1 unidade</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Uramaki Section (hidden by default) -->
+            <div id="uramaki-section" class="menu-category-section hidden">
+                <h2 class="text-3xl font-bold mb-8 font-serif flex items-center">
+                    <i class="fas fa-utensils text-red-500 mr-3"></i> Uramaki
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🔥</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Uramaki Filadélfia</h3>
+                            <span class="text-red-500 font-bold">R$ 56,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">8 peças de uramaki recheado com cream cheese e salmão, envolto em arroz.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1-2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Uramaki Califórnia</h3>
+                            <span class="text-red-500 font-bold">R$ 48,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">8 peças de uramaki com kani, pepino e abacate, coberto com gergelim.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1-2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🌟</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Uramaki Hot</h3>
+                            <span class="text-red-500 font-bold">R$ 58,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">8 peças de uramaki com salmão, cream cheese e molho picante.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1-2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Uramaki Skin</h3>
+                            <span class="text-red-500 font-bold">R$ 42,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">8 peças de uramaki com pele de salmão grelhada e cebolinha.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1-2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Uramaki Rainbow</h3>
+                            <span class="text-red-500 font-bold">R$ 64,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">8 peças de uramaki com variedade de peixes sobre o rolinho.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1-2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🔥</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Uramaki Ebi</h3>
+                            <span class="text-red-500 font-bold">R$ 52,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">8 peças de uramaki com camarão empanado e molho especial.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1-2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hosomaki Section (hidden by default) -->
+            <div id="hosomaki-section" class="menu-category-section hidden">
+                <h2 class="text-3xl font-bold mb-8 font-serif flex items-center">
+                    <i class="fas fa-leaf text-red-500 mr-3"></i> Hosomaki
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Hosomaki de Salmão</h3>
+                            <span class="text-red-500 font-bold">R$ 38,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">8 peças de rolinho fino com salmão e arroz.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🌟</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Hosomaki de Kani</h3>
+                            <span class="text-red-500 font-bold">R$ 34,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">8 peças de rolinho fino com kani (caranguejo) e arroz.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Hosomaki de Pepino</h3>
+                            <span class="text-red-500 font-bold">R$ 28,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">8 peças de rolinho fino com pepino e arroz.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Hosomaki de Atum</h3>
+                            <span class="text-red-500 font-bold">R$ 36,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">8 peças de rolinho fino com atum e arroz.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🔥</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Hosomaki de Ovo</h3>
+                            <span class="text-red-500 font-bold">R$ 26,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">8 peças de rolinho fino com omelete japonês e arroz.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Hosomaki de Shitake</h3>
+                            <span class="text-red-500 font-bold">R$ 32,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">8 peças de rolinho fino com cogumelo shitake e arroz.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Entradas Section (hidden by default) -->
+            <div id="entradas-section" class="menu-category-section hidden">
+                <h2 class="text-3xl font-bold mb-8 font-serif flex items-center">
+                    <i class="fas fa-utensil-spoon text-red-500 mr-3"></i> Entradas
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🔥</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Gyoza</h3>
+                            <span class="text-red-500 font-bold">R$ 32,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">6 unidades de pastéis japoneses recheados com carne suína e legumes.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1-2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Harumaki</h3>
+                            <span class="text-red-500 font-bold">R$ 28,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">4 rolinhos primavera crocantes recheados com legumes.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1-2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🌟</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Sunomono</h3>
+                            <span class="text-red-500 font-bold">R$ 24,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Salada de pepino japonês com vinagre de arroz e gergelim.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Edamame</h3>
+                            <span class="text-red-500 font-bold">R$ 18,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Vagem de soja cozida com sal grosso.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Shimeji na Manteiga</h3>
+                            <span class="text-red-500 font-bold">R$ 26,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cogumelos shimeji salteados na manteiga e shoyu.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🔥</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Karaage</h3>
+                            <span class="text-red-500 font-bold">R$ 34,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">6 pedaços de frango empanado no estilo japonês.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1-2 pessoas</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sobremesas Section (hidden by default) -->
+            <div id="sobremesas-section" class="menu-category-section hidden">
+                <h2 class="text-3xl font-bold mb-8 font-serif flex items-center">
+                    <i class="fas fa-ice-cream text-red-500 mr-3"></i> Sobremesas
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🌟</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Mochi</h3>
+                            <span class="text-red-500 font-bold">R$ 22,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">3 unidades de bolinho de arroz japonês com recheio de sorvete (sabores variados).</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Dorayaki</h3>
+                            <span class="text-red-500 font-bold">R$ 18,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Panqueca japonesa recheada com anko (pasta de feijão doce).</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Tempurá de Sorvete</h3>
+                            <span class="text-red-500 font-bold">R$ 26,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Sorvete empanado na massa tempurá, servido quente e frio.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🔥</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Matcha Tiramisu</h3>
+                            <span class="text-red-500 font-bold">R$ 28,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Sobremesa italiana com toque japonês de chá verde matcha.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Manju</h3>
+                            <span class="text-red-500 font-bold">R$ 19,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">3 unidades de bolinho japonês recheado com pasta de feijão doce.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Sorvete de Gergelim</h3>
+                            <span class="text-red-500 font-bold">R$ 21,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Sorvete artesanal de gergelim preto, sabor tradicional japonês.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Serve 1 pessoa</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bebidas Section (hidden by default) -->
+            <div id="bebidas-section" class="menu-category-section hidden">
+                <h2 class="text-3xl font-bold mb-8 font-serif flex items-center">
+                    <i class="fas fa-glass-martini-alt text-red-500 mr-3"></i> Bebidas
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🔥</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Sake Quente</h3>
+                            <span class="text-red-500 font-bold">R$ 42,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Bebida alcoólica japonesa tradicional servida aquecida.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">300ml</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Chá Verde</h3>
+                            <span class="text-red-500 font-bold">R$ 12,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Chá verde japonês tradicional servido quente.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">300ml</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🌟</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Ramune</h3>
+                            <span class="text-red-500 font-bold">R$ 18,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Refrigerante japonês tradicional com tampa de esfera.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">200ml</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Umeshu</h3>
+                            <span class="text-red-500 font-bold">R$ 28,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Licor japonês de ameixa, servido com gelo.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">150ml</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Calpico</h3>
+                            <span class="text-red-500 font-bold">R$ 14,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Bebida láctea japonesa não alcoólica, sabor original.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">350ml</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="dish-card bg-white rounded-lg shadow-md p-6 relative transition duration-300">
+                        <div class="dish-badge">🔥</div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Cerveja Sapporo</h3>
+                            <span class="text-red-500 font-bold">R$ 22,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cerveja japonesa premium, lata 350ml.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">350ml</span>
+                            <button class="text-red-500 hover:text-red-600 font-medium">+ Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section class="py-16 bg-red-500 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 font-serif">Experimente a verdadeira culinária japonesa</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Faça sua reserva agora e garanta uma experiência gastronômica inesquecível.</p>
+            <a href="index.html#reservation" class="inline-block bg-white hover:bg-gray-100 text-red-500 px-8 py-3 rounded-full text-lg font-medium transition duration-300">Reservar Mesa</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-2">S</div>
+                        <span class="text-xl font-bold">Sakura Sushi</span>
+                    </div>
+                    <p class="text-gray-400">Autêntica culinária japonesa em São Paulo, com ingredientes frescos e técnicas tradicionais.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Início</a></li>
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white transition duration-300">Menu</a></li>
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-white transition duration-300">Sobre Nós</a></li>
+                        <li><a href="index.html#chefs" class="text-gray-400 hover:text-white transition duration-300">Nossos Chefs</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition duration-300">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Horário</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between"><span>Terça - Sexta</span> <span>11:30 - 23:00</span></li>
+                        <li class="flex justify-between"><span>Sábado</span> <span>11:30 - 00:00</span></li>
+                        <li class="flex justify-between"><span>Domingo</span> <span>11:30 - 22:00</span></li>
+                        <li class="flex justify-between"><span>Segunda</span> <span>Fechado</span></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Inscreva-se para receber nossas promoções e novidades.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Sakura Sushi. Todos os direitos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="#" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition duration-300">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 left-6 bg-red-500 hover:bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Menu category switching
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                categoryTabs.forEach(btn => {
+                    btn.classList.remove('active', 'text-white');
+                    btn.classList.add('bg-gray-100', 'text-gray-900');
+                });
+                
+                // Add active class to clicked tab
+                this.classList.remove('bg-gray-100', 'text-gray-900');
+                this.classList.add('active', 'text-white');
+                
+                // Hide all menu sections
+                document.querySelectorAll('.menu-category-section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+                
+                // Show selected menu section
+                const categoryId = this.getAttribute('data-category');
+                document.getElementById(`${categoryId}-section`).classList.remove('hidden');
+                
+                // Scroll to top of section
+                window.scrollTo({
+                    top: document.querySelector('.sticky').offsetHeight + 20,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // Add to cart animation
+        const addButtons = document.querySelectorAll('button:contains("+ Adicionar")');
+        addButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const dishCard = this.closest('.dish-card');
+                dishCard.classList.add('animate-pulse');
+                
+                setTimeout(() => {
+                    dishCard.classList.remove('animate-pulse');
+                }, 300);
+                
+                // Here you would normally add to cart logic
+                console.log('Item added to cart');
+            });
+        });
+    </script>
+</body>
+</html>
